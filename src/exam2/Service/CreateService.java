@@ -27,6 +27,7 @@ public class CreateService {
         System.out.println("보조 메뉴 : 1. OK 2. Cancel");
         System.out.printf("메뉴 선택 : ");
         choice = in.nextInt();
+        in.nextLine();
         switch (choice){
             case 1:
                 Board.boards.add(board);

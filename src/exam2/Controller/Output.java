@@ -7,18 +7,30 @@ import java.util.Scanner;
 
 public class Output {
 
-    static Scanner in = new Scanner(System.in);
-    public static void clear(){
+    private CreateService createService;
+    private ReadService readService;
+    private ClearService clearService;
+    private Scanner in = new Scanner(System.in);
+
+    public Output() {
+        this.in = new Scanner(System.in);
+        this.createService = new CreateService();
+        this.readService = new ReadService();
+        this.clearService = new ClearService();
+    }
+
+
+    public void clear(){
         ClearService.clear();
     }
-    public static void create(){
+    public void create(){
         CreateService.create();
     }
-    public static void read(){
+    public void read(){
         ReadService.read();
     }
 
-    public static void mainMenu(){
+    public void mainMenu(){
         int num = 0;
         System.out.println("메인 메뉴 : 1.Create 2.Read 3.Clear 4.Exit");
         System.out.printf("메뉴 선택 : ");
@@ -40,7 +52,7 @@ public class Output {
         }
     }
 
-    public static void list(){
+    public void list(){
 
         while (true) {
             System.out.println("-----------------------------------");
