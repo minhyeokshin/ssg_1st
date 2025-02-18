@@ -3,6 +3,8 @@ package BoardService.Controller;
 import BoardService.DTO.Board;
 import BoardService.Service.*;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -56,13 +58,22 @@ public class BoardController {
 
     public void list(){
 
+
+
         while (true) {
             System.out.println("-----------------------------------------------------");
             System.out.printf("%-5s %-15s %-15s %-20s%n","no","writer","date","title");
             System.out.println("-----------------------------------------------------");
-            for (Board board : Board.boards) {
+
+            for (int i = Board.boards.size()-1; i >= 0 ; i--) {
+                Board board = Board.boards.get(i);
                 System.out.printf("%-5s %-15s %-15s %-20s%n", board.getBno(), board.getBwriter(), board.getBdate(), board.getBtitle());
             }
+
+//            for (Board board : Board.boards) {
+//                System.out.printf("%-5s %-15s %-15s %-20s%n", board.getBno(), board.getBwriter(), board.getBdate(), board.getBtitle());
+//            }
+
             System.out.println("-----------------------------------------------------");
             mainMenu();
         }
