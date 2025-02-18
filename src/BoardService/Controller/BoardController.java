@@ -23,17 +23,7 @@ public class BoardController {
         this.clearService = new ClearService();
     }
 
-
-//    public void clear(){
-//        clearService.clear();
-//    }
-//    public void create(){
-//        createService.create();
-//    }
-//    public void read(){
-//        readService.read();
-//    }
-
+    // 메인메뉴 선택 메서드
     public void mainMenu(){
         int num = 0;
         System.out.println("메인 메뉴 : 1.Create 2.Read 3.Clear 4.Exit");
@@ -56,6 +46,7 @@ public class BoardController {
         }
     }
 
+    // 기본 출력 bno 기준 역순 출력
     public void list(){
 
 

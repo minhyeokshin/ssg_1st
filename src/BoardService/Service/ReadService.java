@@ -13,6 +13,7 @@ public class ReadService {
         this.in = new Scanner(System.in);
     }
 
+    //게시물 읽기
     public void read() {
         System.out.println("[게시물 읽기]");
         System.out.printf("bno: ");
@@ -34,7 +35,7 @@ public class ReadService {
                 choice = in.nextInt();
                 in.nextLine();
                 switch (choice){
-                    case 1:
+                    case 1: // 게시물 내용 변경
                         System.out.printf("제목 : ");
                             Board.boards.get(i).setBtitle(in.nextLine());
                         System.out.printf("내용 : ");
@@ -43,7 +44,7 @@ public class ReadService {
                             Board.boards.get(i).setBwriter(in.nextLine());
                             Board.boards.get(i).setBdate(Board.boards.get(i).getBdate());
                         break;
-                    case 2:
+                    case 2: //게시물 삭제
                         Board.boards.remove(i);
                         System.out.println("삭제하였습니다.");
 

@@ -13,6 +13,7 @@ public class CreateService {
         this.in = new Scanner(System.in);
     }
 
+    //게시판 글 추가
     public void create() {
 
         int choice = 0;
@@ -33,10 +34,10 @@ public class CreateService {
         choice = in.nextInt();
         in.nextLine();
         switch (choice){
-            case 1:
+            case 1: // 게시판 글추가
                 Board.boards.add(board);
                 break;
-            case 2:
+            case 2: // 게시판 글추가 취소
                 break;
             default:
                 System.out.println("올바른 숫자를 입력하세요.");

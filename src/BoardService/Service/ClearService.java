@@ -13,6 +13,7 @@ public class ClearService {
         this.in = new Scanner(System.in);
     }
 
+    // 게시판 내용 초기화
     public void clear() {
         int choice = 0;
         System.out.println("게시물 전체 삭제");
@@ -22,11 +23,11 @@ public class ClearService {
         choice = in.nextInt();
         in.nextLine();
         switch (choice){
-            case 1:
+            case 1: //게시판 전체삭제
                 Board.boards.clear();
                 System.out.println("모든 게시판이 삭제 되었습니다.");
                 break;
-            case 2:
+            case 2: //게시판 전체삭제 취소
                 break;
             default:
                 System.out.println("올바른 숫자를 입력하세요.");
