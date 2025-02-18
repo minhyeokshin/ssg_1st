@@ -1,4 +1,4 @@
-package exam2.DTO;
+package BoardService.DTO;
 
 import lombok.Data;
 

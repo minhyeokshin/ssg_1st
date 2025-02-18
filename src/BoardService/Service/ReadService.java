@@ -1,12 +1,19 @@
-package exam2.Service;
+package BoardService.Service;
 
-import exam2.DTO.Board;
+import BoardService.Controller.BoardController;
+import BoardService.DTO.Board;
 
 import java.util.Scanner;
 
 public class ReadService {
-    static Scanner in = new Scanner(System.in);
-    public static void read() {
+    private Scanner in;
+    private BoardController boardController;
+
+    public ReadService() { // 생성자 추가
+        this.in = new Scanner(System.in);
+    }
+
+    public void read() {
         System.out.println("[게시물 읽기]");
         System.out.printf("bno: ");
         int serachbno = in.nextInt();
@@ -18,7 +25,7 @@ public class ReadService {
                 System.out.printf("제목 :%s%n",Board.boards.get(i).getBtitle());
                 System.out.printf("내용 :%s%n",Board.boards.get(i).getBcontent());
                 System.out.printf("작성자 :%s%n",Board.boards.get(i).getBwriter());
-                System.out.printf("날짜 :%s%n",Board.boards.get(i).getBdate());
+                System.out.printf("출간일 :%s%n",Board.boards.get(i).getBdate());
                 System.out.println("#####################");
 
                 int choice = 0;
@@ -28,11 +35,11 @@ public class ReadService {
                 in.nextLine();
                 switch (choice){
                     case 1:
-                        System.out.printf("%n제목 : ");
+                        System.out.printf("제목 : ");
                             Board.boards.get(i).setBtitle(in.nextLine());
-                        System.out.printf("%n내용 : ");
+                        System.out.printf("내용 : ");
                             Board.boards.get(i).setBcontent(in.nextLine());
-                        System.out.printf("%n작성자 : ");
+                        System.out.printf("작성자 : ");
                             Board.boards.get(i).setBwriter(in.nextLine());
                             Board.boards.get(i).setBdate(Board.boards.get(i).getBdate());
                         break;

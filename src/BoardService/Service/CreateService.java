@@ -1,15 +1,19 @@
-package exam2.Service;
+package BoardService.Service;
 
-import exam2.DTO.Board;
+import BoardService.Controller.BoardController;
+import BoardService.DTO.Board;
 import java.util.Scanner;
 
 
 public class CreateService {
+    private Scanner in;
+    private BoardController boardController;
 
-    static Scanner in = new Scanner(System.in);
-    public static void create() {
+    public CreateService() { // 생성자 추가
+        this.in = new Scanner(System.in);
+    }
 
-
+    public void create() {
 
         int choice = 0;
 

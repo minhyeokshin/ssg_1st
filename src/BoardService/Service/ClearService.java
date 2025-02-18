@@ -1,12 +1,19 @@
-package exam2.Service;
+package BoardService.Service;
 
-import exam2.DTO.Board;
+import BoardService.Controller.BoardController;
+import BoardService.DTO.Board;
 
 import java.util.Scanner;
 
 public class ClearService {
-    static Scanner in = new Scanner(System.in);
-    public static void clear() {
+    private BoardController boardController;
+    private Scanner in;
+
+    public ClearService() { // 생성자 추가
+        this.in = new Scanner(System.in);
+    }
+
+    public void clear() {
         int choice = 0;
         System.out.println("게시물 전체 삭제");
         System.out.println("-----------------------------");
