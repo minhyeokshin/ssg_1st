@@ -2,6 +2,11 @@ package BoardService.Service;
 
 import BoardService.Controller.BoardController;
 import BoardService.DTO.Board;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Formattable;
 import java.util.Scanner;
 
 
@@ -26,8 +31,17 @@ public class CreateService {
         board.setBwriter(in.nextLine());
         System.out.printf("내용 입력 : ");
         board.setBcontent(in.nextLine());
+        System.out.println("날짜 입력 양식 : yyyyMMdd");
         System.out.printf("날짜 입력 : ");
-        board.setBdate(in.nextLine());
+        String input = in.nextLine();
+
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
+        try {
+            Date parsedDate = formatter.parse(input);
+            board.setBdate(parsedDate);
+        } catch (ParseException e) {
+            System.out.println("날짜 형식이 맞지 않습니다.");
+        }
 
         System.out.println("보조 메뉴 : 1. OK 2. Cancel");
         System.out.printf("메뉴 선택 : ");

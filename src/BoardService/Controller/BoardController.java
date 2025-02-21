@@ -3,6 +3,7 @@ package BoardService.Controller;
 import BoardService.DTO.Board;
 import BoardService.Service.*;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -58,7 +59,8 @@ public class BoardController {
 
             for (int i = Board.boards.size()-1; i >= 0 ; i--) {
                 Board board = Board.boards.get(i);
-                System.out.printf("%-5s %-15s %-15s %-20s%n", board.getBno(), board.getBwriter(), board.getBdate(), board.getBtitle());
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd");
+                System.out.printf("%-5s %-15s %-15s %-20s%n", board.getBno(), board.getBwriter(), formatter.format(board.getBdate()),board.getBtitle());
             }
 
 //            for (Board board : Board.boards) {

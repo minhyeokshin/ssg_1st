@@ -3,6 +3,8 @@ package BoardService.Service;
 import BoardService.Controller.BoardController;
 import BoardService.DTO.Board;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class ReadService {
@@ -26,7 +28,10 @@ public class ReadService {
                 System.out.printf("제목 :%s%n",Board.boards.get(i).getBtitle());
                 System.out.printf("내용 :%s%n",Board.boards.get(i).getBcontent());
                 System.out.printf("작성자 :%s%n",Board.boards.get(i).getBwriter());
-                System.out.printf("출간일 :%s%n",Board.boards.get(i).getBdate());
+
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd");
+
+                System.out.printf("출간일 :%s%n",formatter.format(Board.boards.get(i).getBdate()));
                 System.out.println("#####################");
 
                 int choice = 0;
