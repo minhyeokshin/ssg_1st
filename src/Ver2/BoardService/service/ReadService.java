@@ -1,23 +1,18 @@
-package Ver2.BoardService.Service;
+package Ver2.BoardService.service;
 
-import Ver2.BoardService.BoardController.BoardController;
-import Ver2.BoardService.BoardDAO.BoardDao;
-import Ver2.BoardService.DTO.Board;
+import Ver2.BoardService.controller.BoardController;
+import Ver2.BoardService.service.dao.BoardDao;
 
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
-public class ReadService implements Read{
+public class ReadService{
     private Scanner in;
-//    private BoardController boardController;
-//    private List<Board> boards;
-
     public ReadService() { // 생성자 추가
 
     }
 
     //게시물 읽기
-    @Override
     public void read() {
         System.out.println("[게시물 읽기]");
         System.out.printf("bno: ");

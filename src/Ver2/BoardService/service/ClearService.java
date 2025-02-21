@@ -1,10 +1,9 @@
-package Ver2.BoardService.Service;
+package Ver2.BoardService.service;
 
-import Ver2.BoardService.BoardController.BoardController;
-import Ver2.BoardService.BoardDAO.BoardDao;
-import Ver2.BoardService.DTO.Board;
+import Ver2.BoardService.controller.BoardController;
+import Ver2.BoardService.service.dao.BoardDao;
 
-public class ClearService implements Clear{
+public class ClearService{
     private BoardController boardController;
 //    private Scanner in;
 

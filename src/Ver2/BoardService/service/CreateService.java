@@ -1,18 +1,16 @@
-package Ver2.BoardService.Service;
+package Ver2.BoardService.service;
 
-import Ver2.BoardService.BoardController.BoardController;
-import Ver2.BoardService.DTO.Board;
-import Ver2.BoardService.BoardDAO.BoardDao;
+import Ver2.BoardService.controller.BoardController;
+import Ver2.BoardService.dto.Board;
+import Ver2.BoardService.service.dao.BoardDao;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-import static Ver2.BoardService.DTO.Board.*;
 
-
-public class CreateService implements Create {
+public class CreateService {
 //    private Scanner in;
     private BoardController boardController;
 
@@ -21,7 +19,6 @@ public class CreateService implements Create {
     }
 
     //게시판 글 추가
-    @Override
     public void create() {
 
         int choice = 0;

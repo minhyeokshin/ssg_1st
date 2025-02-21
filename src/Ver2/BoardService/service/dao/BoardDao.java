@@ -1,6 +1,6 @@
-package Ver2.BoardService.BoardDAO;
+package Ver2.BoardService.service.dao;
 
-import Ver2.BoardService.DTO.Board;
+import Ver2.BoardService.dto.Board;
 
 import java.util.ArrayList;
 import java.util.List;

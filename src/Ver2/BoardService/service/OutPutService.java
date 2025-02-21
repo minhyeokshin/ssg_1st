@@ -1,17 +1,17 @@
-package Ver2.BoardService.Service;
+package Ver2.BoardService.service;
 
-import Ver2.BoardService.BoardDAO.BoardDao;
-import Ver2.BoardService.DTO.Board;
+import Ver2.BoardService.service.dao.BoardDao;
+import Ver2.BoardService.dto.Board;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Scanner;
 
-public class OutPutService implements Output{
+public class OutPutService{
 
-    private Create createService;
-    private Read readService;
-    private Clear clearService;
+    private CreateService createService;
+    private ReadService readService;
+    private ClearService clearService;
     public Scanner in = new Scanner(System.in);
     private List<Board> boards;
 
@@ -23,7 +23,6 @@ public class OutPutService implements Output{
     }
 
     // 메인메뉴 선택 메서드
-@Override
     public void mainMenu()  {
         System.out.println("메인 메뉴 : 1.Create 2.Read 3.Clear 4.Exit");
         System.out.printf("메뉴 선택 : ");
@@ -41,7 +40,6 @@ public class OutPutService implements Output{
     }
 
     // 기본 출력 bno 기준 역순 출력
-@Override
     public void list(){
 
         while (true) {
