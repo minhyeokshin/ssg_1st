@@ -1,7 +1,7 @@
-package BoardService.Service;
+package Ver1.BoardService.Service;
 
-import BoardService.Controller.BoardController;
-import BoardService.DTO.Board;
+import Ver1.BoardService.Controller.BoardController;
+import Ver1.BoardService.DTO.Board;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

@@ -1,4 +1,4 @@
-package BoardService.DTO;
+package Ver1.BoardService.DTO;
 
 
 import lombok.Data;

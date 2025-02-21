@@ -1,6 +1,6 @@
-package BoardService;
+package Ver1.BoardService;
 
-import BoardService.Controller.BoardController;
+import Ver1.BoardService.Controller.BoardController;
 
 public class Main {
 
