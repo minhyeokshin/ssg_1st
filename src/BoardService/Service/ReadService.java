@@ -34,7 +34,7 @@ public class ReadService {
                 System.out.println("#####################");
 
                 int choice = 0;
-                System.out.println("보조 메뉴 : 1.Update | 2.Delete | 3.List");
+                System.out.println("보조 메뉴 : 1.Update(수정) | 2.Delete(삭제) | 3.List(전체보기)");
                 System.out.printf("메뉴 선택 : ");
                 choice = in.nextInt();
                 in.nextLine();

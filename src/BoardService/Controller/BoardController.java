@@ -3,7 +3,6 @@ package BoardService.Controller;
 import BoardService.DTO.Board;
 import BoardService.Service.*;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Scanner;
@@ -60,9 +59,6 @@ public class BoardController {
                 System.out.printf("%-5s %-15s %-15s %-20s%n", board.getBno(), board.getBwriter(), formatter.format(board.getBdate()),board.getBtitle());
             }
 
-//            for (Board board : Board.boards) {
-//                System.out.printf("%-5s %-15s %-15s %-20s%n", board.getBno(), board.getBwriter(), board.getBdate(), board.getBtitle());
-//            }
 
             System.out.println("-----------------------------------------------------");
             mainMenu();
