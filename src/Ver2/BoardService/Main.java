@@ -11,8 +11,6 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-
 
         BoardDao boardDao = BoardDao.getInstance();
         CreateService createService = new CreateService(boardDao);

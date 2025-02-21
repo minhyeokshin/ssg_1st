@@ -5,6 +5,7 @@ import Ver2.BoardService.dto.Board;
 import lombok.Data;
 
 import java.text.SimpleDateFormat;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -31,7 +32,15 @@ public class OutPutService{
         int num = 0;
         System.out.println("메인 메뉴 : 1.Create 2.Read 3.Clear 4.Exit");
         System.out.printf("메뉴 선택 : ");
-        num = in.nextInt();
+
+        try {
+            num = in.nextInt();
+            in.nextLine();
+        } catch (InputMismatchException e) {
+            System.out.println("숫자를 입력하세요.");
+            in.nextLine();
+        }
+
         switch (num){
             case 1:
                 createService.create();

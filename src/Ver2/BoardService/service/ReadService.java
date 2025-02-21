@@ -4,6 +4,7 @@ import Ver2.BoardService.controller.BoardControllerB;
 import Ver2.BoardService.service.dao.BoardDao;
 
 import java.text.SimpleDateFormat;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ReadService{
@@ -17,8 +18,16 @@ public class ReadService{
     //게시물 읽기
     public void read() {
         System.out.println("[게시물 읽기]");
-        System.out.printf("bno: ");
-        int serachbno = in.nextInt();
+
+        int serachbno = 0;
+        try {
+            System.out.printf("bno: ");
+            serachbno = in.nextInt();
+            in.nextLine();
+        } catch (InputMismatchException e) {
+            System.out.println("숫자를 입력하세요.");
+            in.nextLine();
+        }
 
         for (int i = 0; i < boardDao.getBoards().size(); i++) {
             if (serachbno == boardDao.getBoards().get(i).getBno()){
@@ -72,10 +81,7 @@ public class ReadService{
                         break;
                 }
             }
-            else {
-                System.out.printf("올바른 숫자를 입력하세요%n");
-                return;
-            }
+
 
         }
 

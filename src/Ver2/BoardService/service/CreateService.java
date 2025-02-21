@@ -8,6 +8,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Comparator;
 import java.util.Date;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -58,7 +59,16 @@ public class CreateService {
                 } else {
                     System.out.println("보조 메뉴 : 1. OK(저장) 2. Cancel(저장취소)");
                     System.out.printf("메뉴 선택 : ");
-                    choice = Integer.parseInt(in.nextLine());
+
+                    try {
+                        choice = in.nextInt();
+                        in.nextLine();
+                    } catch (InputMismatchException e) {
+                        System.out.println("숫자를 입력하세요.");
+                        in.nextLine();
+                    }
+
+
                 }
 
         switch (choice){

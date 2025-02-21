@@ -4,6 +4,7 @@ import Ver2.BoardService.controller.BoardControllerB;
 import Ver2.BoardService.service.dao.*;
 import lombok.Data;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 @Data
@@ -22,8 +23,15 @@ public class ClearService{
         System.out.println("-----------------------------");
         System.out.println("보조 메뉴 : 1. Ok(전체삭제) | 2. Cancel(취소)");
         System.out.printf("메뉴 선택 : ");
-        choice = in.nextInt();
-        in.nextLine();
+
+        try {
+            choice = in.nextInt();
+            in.nextLine();
+        } catch (InputMismatchException e) {
+            System.out.println("숫자를 입력하세요.");
+            in.nextLine();
+        }
+
         switch (choice){
             case 1: //게시판 전체삭제
                 boardDao.getBoards().clear();
