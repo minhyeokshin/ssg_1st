@@ -10,8 +10,6 @@ import java.util.Scanner;
 public class ClearService{
     Scanner in = new Scanner(System.in);
 
-    private BoardControllerB boardController;
-
     public ClearService() {}// 생성자 추가
 
     // 게시판 내용 초기화

@@ -18,8 +18,6 @@ public class ServiceRun implements Service {
         this.clearService = clearService;
         this.outPutService = outPutService;
 
-
-
     }
 
 

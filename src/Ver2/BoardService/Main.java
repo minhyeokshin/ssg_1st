@@ -18,6 +18,7 @@ public class Main {
         ReadService readService = new ReadService();
         ClearService clearService = new ClearService();
         OutPutService outPutService = new OutPutService();
+
         Service service = new ServiceRun(createService,readService,clearService,outPutService);
 
         BoardController boardController = new BoardControllerB(service);

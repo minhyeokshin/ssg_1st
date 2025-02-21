@@ -3,7 +3,6 @@ package Ver2.BoardService.service;
 import Ver2.BoardService.controller.BoardControllerB;
 import Ver2.BoardService.dto.Board;
 import Ver2.BoardService.service.dao.BoardDao;
-import lombok.Data;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -11,14 +10,10 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.Scanner;
 
-@Data
+
 public class CreateService {
-//    private Scanner in;
 
     Scanner in = new Scanner(System.in);
-
-
-    private BoardControllerB boardController;
 
     public CreateService() {} // 생성자 추가}
 
