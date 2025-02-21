@@ -6,7 +6,6 @@ import BoardService.DTO.Board;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Formattable;
 import java.util.Scanner;
 
 
@@ -40,13 +39,19 @@ public class CreateService {
             Date parsedDate = formatter.parse(input);
             board.setBdate(parsedDate);
         } catch (ParseException e) {
-            System.out.println("날짜 형식이 맞지 않습니다.");
-        }
+            System.out.printf("날짜 형식이 맞지 않습니다.%n메인메뉴로 돌아갑니다%n");
+            }
 
-        System.out.println("보조 메뉴 : 1. OK 2. Cancel");
-        System.out.printf("메뉴 선택 : ");
-        choice = in.nextInt();
-        in.nextLine();
+                // 날짜 잘못입력하면 저장안하고, 메인메뉴 반환
+                if (board.getBdate() == null){
+                    choice = 2;
+                } else {
+                    System.out.println("보조 메뉴 : 1. OK(저장) 2. Cancel(저장취소)");
+                    System.out.printf("메뉴 선택 : ");
+                    choice = in.nextInt();
+                    in.nextLine();
+                }
+
         switch (choice){
             case 1: // 게시판 글추가
                 Board.boards.add(board);

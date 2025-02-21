@@ -4,7 +4,6 @@ import BoardService.Controller.BoardController;
 import BoardService.DTO.Board;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Scanner;
 
 public class ReadService {

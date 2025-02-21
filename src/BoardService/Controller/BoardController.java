@@ -3,9 +3,8 @@ package BoardService.Controller;
 import BoardService.DTO.Board;
 import BoardService.Service.*;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -25,7 +24,7 @@ public class BoardController {
     }
 
     // 메인메뉴 선택 메서드
-    public void mainMenu(){
+    public void mainMenu()  {
         int num = 0;
         System.out.println("메인 메뉴 : 1.Create 2.Read 3.Clear 4.Exit");
         System.out.printf("메뉴 선택 : ");
@@ -49,8 +48,6 @@ public class BoardController {
 
     // 기본 출력 bno 기준 역순 출력
     public void list(){
-
-
 
         while (true) {
             System.out.println("-----------------------------------------------------");
