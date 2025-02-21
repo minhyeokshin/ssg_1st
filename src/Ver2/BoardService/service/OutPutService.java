@@ -10,33 +10,42 @@ import java.util.Scanner;
 
 @Data
 public class OutPutService{
+
     Scanner in = new Scanner(System.in);
 
-    private CreateService createService;
-    private ReadService readService;
-    private ClearService clearService;
-    private List<Board> boards;
+    CreateService createService;
+    ReadService readService;
+    ClearService clearService;
+    List<Board> boards;
+    BoardDao boardDao;
 
-    public OutPutService() {
-        this.createService = new CreateService();
-        this.readService = new ReadService();
-        this.clearService = new ClearService();
+    public OutPutService(BoardDao boardDao) {
+        this.createService = new CreateService(boardDao);
+        this.readService = new ReadService(boardDao);
+        this.clearService = new ClearService(boardDao);
+        this.boardDao = boardDao;
     }
 
     // 메인메뉴 선택 메서드
     public void mainMenu()  {
+        int num = 0;
         System.out.println("메인 메뉴 : 1.Create 2.Read 3.Clear 4.Exit");
         System.out.printf("메뉴 선택 : ");
-        int num = in.nextInt();
-        switch (num) {
-            case 1 -> createService.create();
-            case 2 -> readService.read();
-            case 3 -> clearService.clear();
-            case 4 -> {
+        num = in.nextInt();
+        switch (num){
+            case 1:
+                createService.create();
+                break;
+            case 2:
+                readService.read();
+                break;
+            case 3:
+                clearService.clear();
+                break;
+            case 4:
                 System.out.println("프로그램을 종료합니다.");
                 System.exit(0);
-            }
-            default -> System.out.println("올바른 숫자를 입력하세요.");
+                break;
         }
     }
 
@@ -48,8 +57,8 @@ public class OutPutService{
             System.out.printf("%-5s %-15s %-15s %-20s%n","no","writer","date","title");
             System.out.println("-----------------------------------------------------");
 
-            for (int i = BoardDao.getInstance().getBoards().size()-1; i >= 0 ; i--) {
-                Board board = BoardDao.getInstance().getBoards().get(i);
+            for (int i = boardDao.getBoards().size()-1; i >= 0 ; i--) {
+                Board board = boardDao.getBoards().get(i);
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd");
                 System.out.printf("%-5s %-15s %-15s %-20s%n", board.getBno(), board.getBwriter(), formatter.format(board.getBdate()),board.getBtitle());
             }
@@ -59,5 +68,4 @@ public class OutPutService{
             mainMenu();
         }
     }
-
 }

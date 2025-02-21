@@ -5,6 +5,7 @@ import Ver2.BoardService.controller.BoardController;
 import Ver2.BoardService.controller.BoardControllerB;
 import Ver2.BoardService.service.ServiceRun;
 import Ver2.BoardService.service.*;
+import Ver2.BoardService.service.dao.BoardDao;
 
 import java.util.Scanner;
 
@@ -14,10 +15,11 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
 
-        CreateService createService = new CreateService();
-        ReadService readService = new ReadService();
-        ClearService clearService = new ClearService();
-        OutPutService outPutService = new OutPutService();
+        BoardDao boardDao = BoardDao.getInstance();
+        CreateService createService = new CreateService(boardDao);
+        ReadService readService = new ReadService(boardDao);
+        ClearService clearService = new ClearService(boardDao);
+        OutPutService outPutService = new OutPutService(boardDao);
 
         Service service = new ServiceRun(createService,readService,clearService,outPutService);
 

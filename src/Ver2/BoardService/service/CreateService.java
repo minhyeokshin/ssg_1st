@@ -13,9 +13,12 @@ import java.util.Scanner;
 
 public class CreateService {
 
+    BoardDao boardDao;
     Scanner in = new Scanner(System.in);
 
-    public CreateService() {} // 생성자 추가}
+    public CreateService(BoardDao boardDao) {
+        this.boardDao = boardDao;
+    } // 생성자 추가}
 
     //게시판 글 추가
     public void create() {
@@ -25,7 +28,7 @@ public class CreateService {
 
         Board board = new Board();
 
-        int setBno = BoardDao.getInstance().getBoards().stream()
+        int setBno = boardDao.getBoards().stream()
                         .max(Comparator.comparing(Board::getBno))
                                 .map(Board::getBno)
                                         .orElse(0) + 1;
@@ -60,7 +63,7 @@ public class CreateService {
 
         switch (choice){
             case 1: // 게시판 글추가
-                BoardDao.getInstance().getBoards().add(board);
+                boardDao.getBoards().add(board);
                 break;
             case 2: // 게시판 글추가 취소
                 break;

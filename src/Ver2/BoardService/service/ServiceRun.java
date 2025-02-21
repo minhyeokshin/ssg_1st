@@ -38,7 +38,8 @@ public class ServiceRun implements Service {
 
     @Override
     public void startService() {
+
                 outPutService.list();
-                outPutService.mainMenu();
+        outPutService.mainMenu();
     }
 }
