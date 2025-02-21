@@ -1,12 +1,22 @@
 package Ver2.BoardService;
 
 
-import Ver2.BoardService.controller.BoardController;
+import Ver2.BoardService.controller.ServiceRun;
 import Ver2.BoardService.service.*;
+
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+
+        CreateService createService = new CreateService();
+        ReadService readService = new ReadService();
+        ClearService clearService = new ClearService();
+        OutPutService outPutService = new OutPutService();
+
 
 //       BoardController board = new BoardController(
 //               new CreateService(),
@@ -17,10 +27,11 @@ public class Main {
 //       );
 
         ServiceRun service = new ServiceRun(
-                    new CreateService(),
-                    new ReadService(),
-                    new ClearService(),
-                    new OutPutService()
+                    createService,
+                    readService,
+                    clearService,
+                    outPutService,
+                    input
         );
 
 

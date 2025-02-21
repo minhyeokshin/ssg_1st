@@ -1,39 +1,51 @@
 package Ver2.BoardService.service;
 
 import Ver2.BoardService.controller.BoardController;
+import Ver2.BoardService.controller.ServiceRun;
 import Ver2.BoardService.dto.Board;
 import Ver2.BoardService.service.dao.BoardDao;
+import lombok.Data;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.Scanner;
 
-
+@Data
 public class CreateService {
 //    private Scanner in;
+
+    private Scanner scanner; // Scanner를 인스턴스 변수로 저장
+
+
     private BoardController boardController;
 
-    public CreateService() { // 생성자 추가
-        BoardController.input = new Scanner(System.in);
-    }
+    public CreateService() {} // 생성자 추가}
 
     //게시판 글 추가
     public void create() {
 
+
         int choice = 0;
 
         Board board = new Board();
-        board.setBno(BoardDao.getBoards().size()+1);
+
+        int setBno = BoardDao.getBoards().stream()
+                        .max(Comparator.comparing(Board::getBno))
+                                .map(Board::getBno)
+                                        .orElse(0) + 1;
+        board.setBno(setBno);
+
         System.out.printf("제목 입력 : ");
-        board.setBtitle(BoardController.input.nextLine());
+        board.setBtitle(scanner.nextLine());
         System.out.printf("작가 입력 : ");
-        board.setBwriter(BoardController.input.nextLine());
+        board.setBwriter(scanner.nextLine());
         System.out.printf("내용 입력 : ");
-        board.setBcontent(BoardController.input.nextLine());
+        board.setBcontent(scanner.nextLine());
         System.out.println("날짜 입력 양식 : yyyyMMdd");
-        System.out.printf("날짜 입력 : ");
-        String input = BoardController.input.nextLine();
+        System.out.print("날짜 입력 : ");
+        String input = scanner.nextLine();
 
         SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
         try {
@@ -49,7 +61,7 @@ public class CreateService {
                 } else {
                     System.out.println("보조 메뉴 : 1. OK(저장) 2. Cancel(저장취소)");
                     System.out.printf("메뉴 선택 : ");
-                    choice = Integer.parseInt(BoardController.input.nextLine());
+                    choice = Integer.parseInt(scanner.nextLine());
                 }
 
         switch (choice){

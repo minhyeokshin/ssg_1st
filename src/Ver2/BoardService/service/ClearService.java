@@ -1,9 +1,20 @@
 package Ver2.BoardService.service;
 
 import Ver2.BoardService.controller.BoardController;
+import Ver2.BoardService.controller.Service;
+import Ver2.BoardService.controller.ServiceRun;
 import Ver2.BoardService.service.dao.BoardDao;
+import lombok.Data;
 
+import java.util.Scanner;
+
+@Data
 public class ClearService{
+    private Scanner in; // Scanner를 인스턴스 변수로 저장
+
+    public void setScanner(Scanner in) {
+        this.in = in;
+    }
     private BoardController boardController;
 //    private Scanner in;
 
@@ -16,8 +27,8 @@ public class ClearService{
         System.out.println("-----------------------------");
         System.out.println("보조 메뉴 : 1. Ok(전체삭제) | 2. Cancel(취소)");
         System.out.printf("메뉴 선택 : ");
-        choice = BoardController.input.nextInt();
-        BoardController.input.nextLine();
+        choice = in.nextInt();
+        in.nextLine();
         switch (choice){
             case 1: //게시판 전체삭제
                 BoardDao.getBoards().clear();

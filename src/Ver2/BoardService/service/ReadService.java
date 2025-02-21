@@ -1,13 +1,19 @@
 package Ver2.BoardService.service;
 
 import Ver2.BoardService.controller.BoardController;
+import Ver2.BoardService.controller.ServiceRun;
 import Ver2.BoardService.service.dao.BoardDao;
 
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 public class ReadService{
-    private Scanner in;
+    private Scanner in; // Scanner를 인스턴스 변수로 저장
+
+    public void setScanner(Scanner in) {
+        this.in = in;
+    }
+
     public ReadService() { // 생성자 추가
 
     }
@@ -36,8 +42,8 @@ public class ReadService{
 
                     System.out.println("보조 메뉴 : 1.Update(수정) | 2.Delete(삭제) | 3.List(전체보기)");
                     System.out.printf("메뉴 선택 : ");
-                    choice = BoardController.input.nextInt();
-                    BoardController.input.nextLine();
+                    choice = in.nextInt();
+                    in.nextLine();
 
                 switch (choice){
                     case 1: // 게시물 내용 변경

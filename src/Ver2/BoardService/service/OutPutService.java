@@ -1,22 +1,25 @@
 package Ver2.BoardService.service;
 
+import Ver2.BoardService.controller.ServiceRun;
 import Ver2.BoardService.service.dao.BoardDao;
 import Ver2.BoardService.dto.Board;
+import lombok.Data;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Scanner;
 
+@Data
 public class OutPutService{
+    private Scanner scanner; // Scanner를 인스턴스 변수로 저장
+
 
     private CreateService createService;
     private ReadService readService;
     private ClearService clearService;
-    public Scanner in = new Scanner(System.in);
     private List<Board> boards;
 
     public OutPutService() {
-//        this.in = new Scanner(System.in);
         this.createService = new CreateService();
         this.readService = new ReadService();
         this.clearService = new ClearService();
@@ -26,7 +29,7 @@ public class OutPutService{
     public void mainMenu()  {
         System.out.println("메인 메뉴 : 1.Create 2.Read 3.Clear 4.Exit");
         System.out.printf("메뉴 선택 : ");
-        int num = in.nextInt();
+        int num = scanner.nextInt();
         switch (num) {
             case 1 -> createService.create();
             case 2 -> readService.read();

@@ -1,4 +1,6 @@
-package Ver2.BoardService.service;
+package Ver2.BoardService.controller;
+
+import java.util.Scanner;
 
 public interface Service {
 
