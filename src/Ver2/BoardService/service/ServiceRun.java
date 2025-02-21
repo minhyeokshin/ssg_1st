@@ -9,7 +9,10 @@ public class ServiceRun implements Service {
     private ClearService clearService;
     private OutPutService outPutService;
 
-    public ServiceRun(OutPutService outPutService) {
+    public ServiceRun(CreateService createService,ReadService readService,ClearService clearService,OutPutService outPutService) {
+        this.createService = createService;
+        this.readService = readService;
+        this.clearService = clearService;
         this.outPutService = outPutService;
     }
 
@@ -29,7 +32,7 @@ public class ServiceRun implements Service {
     }
 
     @Override
-    public void OutputBoard() {
+    public void startService() {
                 outPutService.list();
                 outPutService.mainMenu();
     }

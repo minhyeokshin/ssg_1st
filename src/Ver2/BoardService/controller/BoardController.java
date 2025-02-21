@@ -23,9 +23,7 @@ public class BoardController {
         this.service = service;
     }
 
-    public void start(){
-        service.OutputBoard();
-    }
+
 
 
 //    public void mainMenu() {

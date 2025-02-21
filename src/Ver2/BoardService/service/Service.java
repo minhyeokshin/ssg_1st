@@ -13,6 +13,6 @@ public interface Service {
     void ClearBoard();
 
     //출력
-    void OutputBoard();
+    void startService();
 
 }

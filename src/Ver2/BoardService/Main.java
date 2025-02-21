@@ -8,14 +8,25 @@ public class Main {
 
     public static void main(String[] args) {
 
-       BoardController board = new BoardController(
-               new CreateService(),
-               new ReadService(),
-               new ClearService(),
-               new OutPutService(),
-               new ServiceRun(new OutPutService())
-       );
+//       BoardController board = new BoardController(
+//               new CreateService(),
+//               new ReadService(),
+//               new ClearService(),
+//               new OutPutService(),
+//               new ServiceRun(new OutPutService())
+//       );
 
-        board.start();
+        ServiceRun service = new ServiceRun(
+                    new CreateService(),
+                    new ReadService(),
+                    new ClearService(),
+                    new OutPutService()
+        );
+
+
+        service.startService();
+
+//        board.start();
     }
+
 }
