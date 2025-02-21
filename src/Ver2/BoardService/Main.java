@@ -1,8 +1,7 @@
 package Ver2.BoardService;
 
 
-import Ver2.BoardService.controller.BoardController;
-import Ver2.BoardService.controller.BoardControllerB;
+import Ver2.BoardService.controller.*;
 import Ver2.BoardService.service.ServiceRun;
 import Ver2.BoardService.service.*;
 import Ver2.BoardService.service.dao.BoardDao;
