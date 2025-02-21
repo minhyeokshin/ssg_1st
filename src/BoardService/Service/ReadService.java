@@ -52,9 +52,13 @@ public class ReadService {
                         Board.boards.remove(i);
                         System.out.println("삭제하였습니다.");
 
+                        // bno 책의 고유 넘버가 아니면 아래 코드 추가
+                        // 책 순서 1번부터 다시 넘버링 하는 로직
+                        /*
                         for (int j = 0; j < Board.boards.size(); j++) {
                             Board.boards.get(j).setBno(j+1);
                         }
+                        */
                         return;
                     default:
                         System.out.println("올바른 숫자를 입력하세요.");
