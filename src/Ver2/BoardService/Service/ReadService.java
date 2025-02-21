@@ -67,6 +67,9 @@ public class ReadService implements Read{
                         */
 
                         return;
+                    case 3:
+                        System.out.printf("게시판 목록을 확인합니다.%n");
+                        return;
                     default:
                         System.out.println("올바른 숫자를 입력하세요.");
                         break;

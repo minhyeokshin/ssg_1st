@@ -15,8 +15,7 @@ public class Main {
                new CreateService(),
                new ReadService(),
                new ClearService(),
-               new OutPutService(),
-               input
+               new OutPutService()
        );
 
         board.mainMenu();

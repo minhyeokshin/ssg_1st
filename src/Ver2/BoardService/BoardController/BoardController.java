@@ -8,20 +8,20 @@ import Ver2.BoardService.Service.*;
 import java.util.Scanner;
 public class BoardController {
 
-//    private final OutPutService outputservice = new OutPutService();
     public static Scanner input = new Scanner(System.in);
     private final Create createService;
     private final Read readService;
     private final Clear clearService;
     private final Output outPutService;
 
-    public BoardController(Create createService, Read readService, Clear clearService, Output outPutService, Scanner scanner) {
+    public BoardController(Create createService, Read readService, Clear clearService, Output outPutService) {
         this.createService = createService;
         this.readService = readService;
         this.clearService = clearService;
         this.outPutService = outPutService;
-        input = scanner;
     }
+
+
 
     public void mainMenu() {
         while (true) {

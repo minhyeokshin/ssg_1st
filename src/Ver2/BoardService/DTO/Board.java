@@ -14,7 +14,4 @@ public class Board {
     private String bwriter;
     private Date bdate;
 
-//    public static List<Board> boards = new ArrayList<>();
-
-
 }

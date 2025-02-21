@@ -16,7 +16,7 @@ public class OutPutService implements Output{
     private List<Board> boards;
 
     public OutPutService() {
-        this.in = new Scanner(System.in);
+//        this.in = new Scanner(System.in);
         this.createService = new CreateService();
         this.readService = new ReadService();
         this.clearService = new ClearService();
