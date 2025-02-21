@@ -1,7 +1,7 @@
 package Ver2.BoardService.service;
 
 import Ver2.BoardService.controller.BoardControllerB;
-import Ver2.BoardService.service.dao.BoardDao;
+import Ver2.BoardService.service.dao.*;
 import lombok.Data;
 
 import java.util.Scanner;
@@ -23,7 +23,7 @@ public class ClearService{
         in.nextLine();
         switch (choice){
             case 1: //게시판 전체삭제
-                BoardDao.getBoards().clear();
+                BoardDao.getInstance().getBoards().clear();
                 System.out.println("모든 게시판이 삭제 되었습니다.");
                 break;
             case 2: //게시판 전체삭제 취소

@@ -48,8 +48,8 @@ public class OutPutService{
             System.out.printf("%-5s %-15s %-15s %-20s%n","no","writer","date","title");
             System.out.println("-----------------------------------------------------");
 
-            for (int i = BoardDao.getBoards().size()-1; i >= 0 ; i--) {
-                Board board = BoardDao.getBoards().get(i);
+            for (int i = BoardDao.getInstance().getBoards().size()-1; i >= 0 ; i--) {
+                Board board = BoardDao.getInstance().getBoards().get(i);
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd");
                 System.out.printf("%-5s %-15s %-15s %-20s%n", board.getBno(), board.getBwriter(), formatter.format(board.getBdate()),board.getBtitle());
             }

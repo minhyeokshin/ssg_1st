@@ -19,16 +19,16 @@ public class ReadService{
         System.out.printf("bno: ");
         int serachbno = in.nextInt();
 
-        for (int i = 0; i < BoardDao.getBoards().size(); i++) {
-            if (serachbno == BoardDao.getBoards().get(i).getBno()){
+        for (int i = 0; i < BoardDao.getInstance().getBoards().size(); i++) {
+            if (serachbno == BoardDao.getInstance().getBoards().get(i).getBno()){
                 System.out.println("#####################");
-                System.out.printf("번호 : %s%n", BoardDao.getBoards().get(i).getBno());
-                System.out.printf("제목 :%s%n", BoardDao.getBoards().get(i).getBtitle());
-                System.out.printf("내용 :%s%n", BoardDao.getBoards().get(i).getBcontent());
-                System.out.printf("작성자 :%s%n", BoardDao.getBoards().get(i).getBwriter());
+                System.out.printf("번호 : %s%n", BoardDao.getInstance().getBoards().get(i).getBno());
+                System.out.printf("제목 :%s%n", BoardDao.getInstance().getBoards().get(i).getBtitle());
+                System.out.printf("내용 :%s%n", BoardDao.getInstance().getBoards().get(i).getBcontent());
+                System.out.printf("작성자 :%s%n", BoardDao.getInstance().getBoards().get(i).getBwriter());
 
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd");
-                String printDate = formatter.format(BoardDao.getBoards().get(i).getBdate());
+                String printDate = formatter.format(BoardDao.getInstance().getBoards().get(i).getBdate());
 
                 System.out.printf("출간일 :%s%n",printDate);
                 System.out.println("#####################");
@@ -43,15 +43,15 @@ public class ReadService{
                 switch (choice){
                     case 1: // 게시물 내용 변경
                         System.out.print("제목 : ");
-                        BoardDao.getBoards().get(i).setBtitle(in.nextLine());
+                        BoardDao.getInstance().getBoards().get(i).setBtitle(in.nextLine());
                         System.out.print("내용 : ");
-                        BoardDao.getBoards().get(i).setBcontent(in.nextLine());
+                        BoardDao.getInstance().getBoards().get(i).setBcontent(in.nextLine());
                         System.out.print("작성자 : ");
-                        BoardDao.getBoards().get(i).setBwriter(in.nextLine());
+                        BoardDao.getInstance().getBoards().get(i).setBwriter(in.nextLine());
 //                            Board.boards.get(i).setBdate(Board.boards.get(i).getBdate());
                         break;
                     case 2: //게시물 삭제
-                        BoardDao.getBoards().remove(i);
+                        BoardDao.getInstance().getBoards().remove(i);
                         System.out.println("삭제하였습니다.");
 
                         // bno 책의 고유 넘버가 아니면 아래 코드 추가

@@ -25,7 +25,7 @@ public class CreateService {
 
         Board board = new Board();
 
-        int setBno = BoardDao.getBoards().stream()
+        int setBno = BoardDao.getInstance().getBoards().stream()
                         .max(Comparator.comparing(Board::getBno))
                                 .map(Board::getBno)
                                         .orElse(0) + 1;
@@ -60,7 +60,7 @@ public class CreateService {
 
         switch (choice){
             case 1: // 게시판 글추가
-                BoardDao.getBoards().add(board);
+                BoardDao.getInstance().getBoards().add(board);
                 break;
             case 2: // 게시판 글추가 취소
                 break;
