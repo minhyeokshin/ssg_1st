@@ -1,4 +1,4 @@
-package Ver2.BoardService.controller;
+package Ver2.BoardService.service;
 
 import java.util.Scanner;
 

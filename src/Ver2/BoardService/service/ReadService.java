@@ -1,18 +1,13 @@
 package Ver2.BoardService.service;
 
-import Ver2.BoardService.controller.BoardController;
-import Ver2.BoardService.controller.ServiceRun;
+import Ver2.BoardService.controller.BoardControllerB;
 import Ver2.BoardService.service.dao.BoardDao;
 
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 public class ReadService{
-    private Scanner in; // Scanner를 인스턴스 변수로 저장
-
-    public void setScanner(Scanner in) {
-        this.in = in;
-    }
+    Scanner in = new Scanner(System.in);
 
     public ReadService() { // 생성자 추가
 
@@ -22,7 +17,7 @@ public class ReadService{
     public void read() {
         System.out.println("[게시물 읽기]");
         System.out.printf("bno: ");
-        int serachbno = BoardController.input.nextInt();
+        int serachbno = in.nextInt();
 
         for (int i = 0; i < BoardDao.getBoards().size(); i++) {
             if (serachbno == BoardDao.getBoards().get(i).getBno()){
@@ -48,11 +43,11 @@ public class ReadService{
                 switch (choice){
                     case 1: // 게시물 내용 변경
                         System.out.print("제목 : ");
-                        BoardDao.getBoards().get(i).setBtitle(BoardController.input.nextLine());
+                        BoardDao.getBoards().get(i).setBtitle(in.nextLine());
                         System.out.print("내용 : ");
-                        BoardDao.getBoards().get(i).setBcontent(BoardController.input.nextLine());
+                        BoardDao.getBoards().get(i).setBcontent(in.nextLine());
                         System.out.print("작성자 : ");
-                        BoardDao.getBoards().get(i).setBwriter(BoardController.input.nextLine());
+                        BoardDao.getBoards().get(i).setBwriter(in.nextLine());
 //                            Board.boards.get(i).setBdate(Board.boards.get(i).getBdate());
                         break;
                     case 2: //게시물 삭제

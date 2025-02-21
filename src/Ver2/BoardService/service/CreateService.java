@@ -1,7 +1,6 @@
 package Ver2.BoardService.service;
 
-import Ver2.BoardService.controller.BoardController;
-import Ver2.BoardService.controller.ServiceRun;
+import Ver2.BoardService.controller.BoardControllerB;
 import Ver2.BoardService.dto.Board;
 import Ver2.BoardService.service.dao.BoardDao;
 import lombok.Data;
@@ -16,10 +15,10 @@ import java.util.Scanner;
 public class CreateService {
 //    private Scanner in;
 
-    private Scanner scanner; // Scanner를 인스턴스 변수로 저장
+    Scanner in = new Scanner(System.in);
 
 
-    private BoardController boardController;
+    private BoardControllerB boardController;
 
     public CreateService() {} // 생성자 추가}
 
@@ -38,14 +37,14 @@ public class CreateService {
         board.setBno(setBno);
 
         System.out.printf("제목 입력 : ");
-        board.setBtitle(scanner.nextLine());
+        board.setBtitle(in.nextLine());
         System.out.printf("작가 입력 : ");
-        board.setBwriter(scanner.nextLine());
+        board.setBwriter(in.nextLine());
         System.out.printf("내용 입력 : ");
-        board.setBcontent(scanner.nextLine());
+        board.setBcontent(in.nextLine());
         System.out.println("날짜 입력 양식 : yyyyMMdd");
         System.out.print("날짜 입력 : ");
-        String input = scanner.nextLine();
+        String input = in.nextLine();
 
         SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
         try {
@@ -61,7 +60,7 @@ public class CreateService {
                 } else {
                     System.out.println("보조 메뉴 : 1. OK(저장) 2. Cancel(저장취소)");
                     System.out.printf("메뉴 선택 : ");
-                    choice = Integer.parseInt(scanner.nextLine());
+                    choice = Integer.parseInt(in.nextLine());
                 }
 
         switch (choice){

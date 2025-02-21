@@ -1,8 +1,6 @@
 package Ver2.BoardService.service;
 
-import Ver2.BoardService.controller.BoardController;
-import Ver2.BoardService.controller.Service;
-import Ver2.BoardService.controller.ServiceRun;
+import Ver2.BoardService.controller.BoardControllerB;
 import Ver2.BoardService.service.dao.BoardDao;
 import lombok.Data;
 
@@ -10,13 +8,9 @@ import java.util.Scanner;
 
 @Data
 public class ClearService{
-    private Scanner in; // Scanner를 인스턴스 변수로 저장
+    Scanner in = new Scanner(System.in);
 
-    public void setScanner(Scanner in) {
-        this.in = in;
-    }
-    private BoardController boardController;
-//    private Scanner in;
+    private BoardControllerB boardController;
 
     public ClearService() {}// 생성자 추가
 
